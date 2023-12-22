@@ -8,10 +8,13 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
     var playerSelection = prompt("Rock, Paper, or Scissors?");
     var computerSelection = getComputerChoice();
+    var playerWins = 0;
+    var computerWins = 0;
     
     if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
         return "Tie!";
     } else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "paper") {
+        computerWins++;
         return "You Lose! Paper Beats Rock.";
     } else if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "scissors") {
         return "You Win. Rock Beats Scissors";
@@ -26,4 +29,12 @@ function playRound(playerSelection, computerSelection) {
     }
       
 
+}
+
+function game() {
+    playRound();
+    playRound();
+    playRound();
+    playRound();
+    playRound();
 }
